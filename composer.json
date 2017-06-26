@@ -1,0 +1,32 @@
+{
+  "name" : "mikycorp/paymentbundle",
+  "description" : "A Payment bundle",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "Mathias Joseph",
+    "email" : "mathias89100@gmail.com"
+  }],
+  "keywords" : [
+    "payment bundle"
+  ],
+  "license" : [
+    "MIT"
+  ],
+  "require" : {
+    "mikycorp/corebundle": "~1.0",
+    "mikycorp/payment": "~1.0"
+  },
+  "autoload" : {
+    "psr-0" : {
+      "Miky\\Bundle\\PaymentBundle" : ""
+    }
+  },
+  "target-dir" : "Miky/Bundle/PaymentBundle",
+  "repositories" : [{
+  }],
+  "extra" : {
+    "branch-alias" : {
+      "dev-master" : "1-dev"
+    }
+  }
+}
