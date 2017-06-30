@@ -1,0 +1,37 @@
+miky_payment_admin_payment:
+    resource: |
+        alias: miky_payment.payment
+        section: admin
+        context: admin
+        templates: MikyAdminBundle:Crud
+        redirect: update
+        grid: miky_payment.admin.payment
+        form: Miky\Bundle\UserBundle\Form\Type\Admin\UserAdminType
+        permission: true
+        vars:
+            all:
+                subheader: miky_payment.manage_payment
+                templates:
+                    #form: MikyAdminBundle:Product:_form.html.twig
+            index:
+                icon: cube
+    type: miky.resource_admin
+
+miky_payment_admin_payment_method:
+    resource: |
+        alias: miky_payment.payment_method
+        section: admin
+        context: admin
+        templates: MikyAdminBundle:Crud
+        redirect: update
+        grid: miky_payment.admin.payment_method
+        form: Miky\Bundle\UserBundle\Form\Type\Admin\UserAdminType
+        permission: true
+        vars:
+            all:
+                subheader: miky_payment.manage_payment_method
+                templates:
+                    #form: MikyAdminBundle:Product:_form.html.twig
+            index:
+                icon: cube
+    type: miky.resource_admin

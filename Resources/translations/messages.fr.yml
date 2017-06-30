@@ -1,0 +1,5 @@
+miky_payment:
+    payments: Paiements
+    payment: Paiement
+    payments_list: Liste des paiements
+    payment_methods: Méthodes de paiement

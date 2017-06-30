@@ -2,6 +2,8 @@
 
 namespace Miky\Bundle\PaymentBundle\DependencyInjection;
 
+use Miky\Bundle\PaymentBundle\Doctrine\Entity\Payment;
+use Miky\Bundle\PaymentBundle\Doctrine\Entity\PaymentMethod;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -12,6 +14,16 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
+    private $useDefaultEntities;
+
+    /**
+     * Configuration constructor.
+     */
+    public function __construct($useDefaultEntities)
+    {
+        $this->useDefaultEntities = $useDefaultEntities;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -20,9 +32,19 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('miky_payment');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        if ($this->useDefaultEntities){
+            $rootNode
+                ->children()
+                ->scalarNode('payment_class')->defaultValue(Payment::class)->cannotBeEmpty()->end()
+                ->scalarNode('payment_method_class')->defaultValue(PaymentMethod::class)->cannotBeEmpty()->end()
+                ->end();
+        }else{
+            $rootNode
+                ->children()
+                ->scalarNode('payment_class')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('payment_method_class')->isRequired()->cannotBeEmpty()->end()
+                ->end();
+        }
 
         return $treeBuilder;
     }

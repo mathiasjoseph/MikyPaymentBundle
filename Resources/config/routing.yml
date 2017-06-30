@@ -1,0 +1,3 @@
+miky_payment_admin:
+    resource: "@MikyPaymentBundle/Resources/config/routing/admin.yml"
+    prefix : /
