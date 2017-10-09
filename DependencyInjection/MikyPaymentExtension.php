@@ -29,7 +29,7 @@ class MikyPaymentExtension extends AbstractCoreExtension implements PrependExten
         $this->remapParametersNamespaces($config, $container, array(
             '' => array(
                 'payment_class' => 'miky_payment.model.payment.class',
-                'payment_method_class' => 'miky_payment.model.payment_method.class',
+                'payment_token_class' => 'miky_payment.model.payment_token.class',
             ),
         ));
     }

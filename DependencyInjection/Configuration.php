@@ -3,7 +3,7 @@
 namespace Miky\Bundle\PaymentBundle\DependencyInjection;
 
 use Miky\Bundle\PaymentBundle\Doctrine\Entity\Payment;
-use Miky\Bundle\PaymentBundle\Doctrine\Entity\PaymentMethod;
+use Miky\Bundle\PaymentBundle\Doctrine\Entity\PaymentToken;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -36,13 +36,13 @@ class Configuration implements ConfigurationInterface
             $rootNode
                 ->children()
                 ->scalarNode('payment_class')->defaultValue(Payment::class)->cannotBeEmpty()->end()
-                ->scalarNode('payment_method_class')->defaultValue(PaymentMethod::class)->cannotBeEmpty()->end()
+                ->scalarNode('payment_token_class')->defaultValue(PaymentToken::class)->cannotBeEmpty()->end()
                 ->end();
         }else{
             $rootNode
                 ->children()
                 ->scalarNode('payment_class')->isRequired()->cannotBeEmpty()->end()
-                ->scalarNode('payment_method_class')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('payment_token_class')->isRequired()->cannotBeEmpty()->end()
                 ->end();
         }
 

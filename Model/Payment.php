@@ -8,8 +8,9 @@
 
 namespace Miky\Bundle\PaymentBundle\Model;
 
+use Payum\Core\Model\Payment as BasePayment;
 
-class Payment extends \Miky\Component\Payment\Model\Payment
+class Payment extends BasePayment
 {
 
 }

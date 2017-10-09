@@ -1,15 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 29/06/17
- * Time: 14:51
- */
 
 namespace Miky\Bundle\PaymentBundle\Doctrine\Entity;
 
-
+/**
+ * Payment
+ */
 class Payment extends \Miky\Bundle\PaymentBundle\Model\Payment
 {
+    /**
+     * @var int
+     */
+    private $id;
 
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }
+
