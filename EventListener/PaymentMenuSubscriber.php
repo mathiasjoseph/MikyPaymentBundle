@@ -35,11 +35,7 @@ class PaymentMenuSubscriber implements EventSubscriberInterface
             ->setLabel('miky_payment.payments')
             ->setLabelAttribute('icon', 'credit-card-alt')
         ;
-        $paymentList = $paymentSubMenu
-            ->addChild('payment_methods', ['route' => 'miky_payment_admin_payment_method_index'])
-            ->setLabel('miky_payment.payment_methods')
-            ->setLabelAttribute('icon', 'credit-card-alt')
-        ;
+
 
     }
 }
